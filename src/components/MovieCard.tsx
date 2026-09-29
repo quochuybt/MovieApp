@@ -4,21 +4,23 @@ import movie from '../interfaces/Movie'
 import movieCardProps from '../interfaces/MovieCard'
 
 const MovieCard = ({movie,layout="row",onSelect}:movieCardProps) => {
-    return <TouchableOpacity onPress={()=>onSelect(movie.id)}>
-        <View style={styles.imageContainer}>
-        <Image source={{uri:movie.poster}} resizeMode='cover' style={styles.image}/>
+    return <TouchableOpacity onPress={()=>onSelect(movie.id)} style={styles.container}>
+        <View>
+        <Image source={{uri:movie.poster}} style={styles.image}/>
         </View>
+        <View>
         <Text>{movie.title} - {movie.genre}</Text>
         <Text>{movie.year} - {movie.rating}</Text>
         <Text>{movie.isShowing?"Đang chiếu":"Ngừng chiếu"}</Text>
-    </TouchableOpacity>
+        </View>
+        </TouchableOpacity>
 }
 
 export default React.memo(MovieCard);
 
 const styles = StyleSheet.create({
-    imageContainer:{
-        height:100
+    container:{
+        flex:1,
     },
     image:{
         width:"30%",

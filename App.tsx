@@ -1,15 +1,11 @@
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { StyleSheet, Text, View } from 'react-native';
-import Home from './src/screens/Home';
+import React from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Home from "./src/screens/Home";
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Home/>
+      <Home />
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  
-});
